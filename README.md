@@ -1,21 +1,27 @@
-## Next.js Repl.it Template
+# Example app with [chakra-ui](https://github.com/chakra-ui/chakra-ui) and Typescript
 
-[Next.js](https://nextjs.org/) is an easy-to-use React framework that ships with server-side rendering, hot module reloading, and many other features out-of-the-box. 
+This example features how to use [chakra-ui](https://github.com/chakra-ui/chakra-ui) as the component library within a Next.js app with typescript.
 
-By default, Repl.it runs the `dev` script, but you can configure it by changing the `run` field in `.replit`.
+Next.js and chakra-ui have built-in TypeScript declarations, so we'll get autocompletion for their modules straight away.
 
-To add a new page simply add a .js, .jsx, .ts, or .tsx file in the `pages` directory.
+We are connecting the Next.js `_app.js` with `chakra-ui`'s Provider and theme so the pages can have app-wide dark/light mode. We are also creating some components which shows the usage of `chakra-ui`'s style props.
 
-Pages are associated with a route based on their file name. For example pages/about.js is mapped to /about. You can even add dynamic route parameters with the filename.
+## Deploy your own
 
-We've already created `/pages/index.js` for you to get you started. Feel free to change its contents and see it live-update!
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-```javascript
-function HomePage() {
-  return <div>Welcome to Next.js!</div>
-}
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript&project-name=with-chakra-ui-typescript&repository-name=with-chakra-ui-typescript)
 
-export default HomePage
+## How to use
+
+### Using `create-next-app`
+
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+
+```bash
+npx create-next-app --example with-chakra-ui-typescript with-chakra-ui-typescript-app
+# or
+yarn create next-app --example with-chakra-ui-typescript with-chakra-ui-typescript-app
 ```
 
-Refer to the [Next.js docs](https://nextjs.org/docs/getting-started) to learn more.
+Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
