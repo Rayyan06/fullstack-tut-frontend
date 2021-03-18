@@ -1,36 +1,47 @@
-import React from 'react'
-import { Formik, Form } from 'formik'
-import { FormControl, FormLabel, Input} from "@chakra-ui/react"
-
-interface registerProps {
-
-}
+import React from "react";
+import { Formik, Form } from "formik";
+import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { Wrapper } from "../components/Wrapper";
+import { InputField } from "../components/InputField";
+interface registerProps {}
 
 const Register: React.FC<registerProps> = ({}) => {
-    
-
- 
-
   return (
-      <Formik initialValues={{ username: "", password: ""}} onSubmit={(values)=> {
-          console.log(values)}}>
-      {({values, handleChange}) => (
+    <Wrapper variant="small">
+      <Formik
+        initialValues={{ username: "", password: "" }}
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+      >
+        {({ isSubmitting }) => (
           <Form>
-            <FormControl>
-                <FormLabel htmlFor="username">Username</FormLabel>
-                <Input 
-                    value={values.username} id="username" placeholder="name" 
-                    onChange={handleChange}
-                    />
-
-                { /*<FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                */
-                }
-              </FormControl>
+            <InputField
+              name="username"
+              placeholder="username"
+              label="Username"
+            />
+            <Box mt={4}>
+              <InputField
+                name="password"
+                placeholder="password"
+                label="Password"
+                type="password"
+              />
+            </Box>
+            <Button
+              type="submit"
+              mt={4}
+              isLoading={isSubmitting}
+              colorScheme="teal"
+            >
+              register
+            </Button>
           </Form>
-      )}
+        )}
       </Formik>
-  )
-}
+    </Wrapper>
+  );
+};
 
-export default Register
+export default Register;
