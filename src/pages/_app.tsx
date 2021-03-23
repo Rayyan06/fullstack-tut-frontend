@@ -2,12 +2,14 @@ import { ChakraProvider, ColorModeProvider } from "@chakra-ui/react";
 
 import theme from "../theme";
 import { Provider, createClient } from "urql";
-
-const client = createClient({ url: "https://0ufyz.sse.codesandbox.io" });
-
 import { AppProps } from "next/app";
-import React from "react";
 
+const client = createClient({
+  url: "https://tob87.sse.codesandbox.io/graphql",
+  fetchOptions: {
+    credentials: "include"
+  }
+});
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider value={client}>
